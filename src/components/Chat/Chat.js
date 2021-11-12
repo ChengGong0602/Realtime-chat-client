@@ -9,7 +9,7 @@ import Input from '../Input/Input';
 
 import './Chat.css';
 
-const ENDPOINT = 'https://test-g5Y7.randomforest.ee/api/';
+const ENDPOINT = 'https://test-g5Y7.randomforest.ee:5000';
 // const ENDPOINT = "localhost:5000";
 
 let socket;
