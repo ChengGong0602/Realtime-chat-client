@@ -15,6 +15,13 @@
   word-wrap: break-word;
 }
 
+.timeText {
+  letter-spacing: 0;
+  float: right;
+  font-size: 0.8em;
+  word-wrap: break-word;
+}
+
 .messageText img {
   vertical-align: middle;
 }
