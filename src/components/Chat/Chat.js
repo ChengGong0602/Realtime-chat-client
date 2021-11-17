@@ -11,8 +11,8 @@ import Input from '../Input/Input';
 
 import './Chat.css';
 
-// const ENDPOINT = 'https://react-socket-server-cheng.herokuapp.com';
-const ENDPOINT = "http://localhost:5000";
+const ENDPOINT = 'https://react-socket-server-cheng.herokuapp.com';
+// const ENDPOINT = "http://localhost:5000";
 
 let socket;
 
@@ -21,7 +21,6 @@ const Chat = ({ location }) => {
   const [time, setTime] = useState('');
   const [room, setRoom] = useState('');
   const [users, setUsers] = useState('');
-  const [message_array, setMessage_array] = useState([]);
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
   
@@ -62,14 +61,6 @@ const Chat = ({ location }) => {
           setMessages(newArr)
         });
 
-
-
-        // {id: 6, user_name: 'tom', room_name: 'testroom', message: 'hujgj', created_at: 1624717576000}
-// 1: {id: 7, user_name: 'tom', room_name: 'testroom', message: 'hjjghj', created_at: 1624717576000}
-// 2: {id: 8, user_name: 'tom', room_name: 'testroom', message: 'jhj', created_at: 1624717576000}
-// 3: {id: 9, user_name: 'tom', room_name: 'testroom', message: 'jhjhjhjhjhjhj', created_at: 1624717576000}
-// 4: {id: 10, user_name: 'tom', room_name: 'testroom', message: 'hi', created_at: 1624717576000}
-// 5: {id: 11, user_name: 'jones', room_name: 'testroom', message: 'hello', created_at: 1624717576000}
     socket.on('message', message => {
       setMessages(messages => [ ...messages, message ]);
       console.log("messages==>", messages)
