@@ -14,8 +14,8 @@ import './Chat.css';
 // const ENDPOINT = 'https://react-socket-server-cheng.herokuapp.com';
 // const ENDPOINT = 'https://react-websocket-server-cheng.herokuapp.com';
 
-// const ENDPOINT = "http://localhost:5000";
-const ENDPOINT = 'https://test-g5y7.randomforest.ee/api';
+const SEVER_ENDPOINT = "http://localhost:5000";
+const API_ENDPOINT = 'https://test-g5y7.randomforest.ee/api';
 
 let socket;
 
@@ -34,7 +34,7 @@ const Chat = ({ location }) => {
     const { name, room } = queryString.parse(location.search);
     console.log("location.search===",location.search)
 
-    socket = io(ENDPOINT);
+    socket = io(SEVER_ENDPOINT);
 
     setRoom(room);
     setName(name)
@@ -44,13 +44,13 @@ const Chat = ({ location }) => {
         alert(error);
       }
     });
-  }, [ENDPOINT, location.search]);
+  }, [SEVER_ENDPOINT, location.search]);
   
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
     const params = { room_name : room.trim().toLowerCase() };   
 
-    axios.post(ENDPOINT +'/roomData', params)
+    axios.post(API_ENDPOINT +'/roomData', params)
         .then(response => {
           let tempArr = response.data.response
           let newArr = []
