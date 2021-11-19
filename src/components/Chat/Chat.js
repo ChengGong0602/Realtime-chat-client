@@ -15,7 +15,7 @@ import './Chat.css';
 // const ENDPOINT = 'https://react-websocket-server-cheng.herokuapp.com';
 
 // const ENDPOINT = "http://localhost:5000";
-const Server_ENDPOINT = 'https://test-g5Y7.randomforest.ee/socket.io';
+const Server_ENDPOINT = 'https://test-g5Y7.randomforest.ee';
 const API_ENDPOINT = 'https://test-g5y7.randomforest.ee/api';
 
 let socket;
